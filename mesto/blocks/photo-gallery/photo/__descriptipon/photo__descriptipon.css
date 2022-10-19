@@ -1,0 +1,8 @@
+.photo__disription {
+    margin-left: 21px;
+    margin-right: 15px;
+    max-width: 246px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
