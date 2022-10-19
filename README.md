@@ -9,7 +9,7 @@
 
 **Figma**
 
-* [Ссылка на макет в GitPages]()
+* [Ссылка на макет в GitPages](Snooper227/mesto)
 
 **Интро**
 
