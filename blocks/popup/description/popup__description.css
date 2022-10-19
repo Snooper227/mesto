@@ -1,0 +1,13 @@
+.popup__description {
+    max-width: 358px;
+    width: 100%;
+    margin-bottom: 13px;
+    border: none;
+}
+
+@media screen and (max-width: calc(320px + 20px)) {
+    .popup__description {
+        max-width: 238px;
+        width: 100%;
+    }
+}
