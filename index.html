@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="Ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Mesto</title>
+        <link rel="stylesheet" href="./pages/index.css" />
+    </head>
+    <body class="page">
+        <header class="header">
+            <img src="./images/Vector.png" class="header__logo" />
+            <div class="header__line"></div>
+        </header>
+
+        <main class="content">
+            <section class="profile">
+                <div class="profile__container">
+                    <img
+                        class="profile__avatar"
+                        src="./images/avatar.png"
+                        alt="аватар"
+                    />
+                    <div class="profile-info">
+                        <h1 class="profile-info__title">Жак-Ив Кусто</h1>
+                        <button
+                            class="profile-info__popup-open"
+                            type="button"
+                        ></button>
+                        <p class="profile-info__subtitle">
+                            Исследователь океана
+                        </p>
+                    </div>
+                </div>
+                <button class="profile__add-button" alt="Кнопка добавить">
+                    <img
+                        class="profile__add-button_krest"
+                        src="./images/krest.png"
+                        alt="крестик"
+                    />
+                </button>
+            </section>
+
+            <section class="photo-gallery">
+                <div class="photo">
+                    <img
+                        class="photo__item"
+                        src="./images/image1.png"
+                        alt="Карачаевск"
+                    />
+                    <div class="photo__disription">
+                        <h2 class="photo__title">Карачаевск</h2>
+                        <img
+                            class="photo__like"
+                            src="./images/like.png"
+                            alt="лайк"
+                        />
+                    </div>
+                </div>
+                <div class="photo">
+                    <img
+                        class="photo__item"
+                        src="./images/image2.png"
+                        alt="Гора Эльбрус"
+                    />
+                    <div class="photo__disription">
+                        <h2 class="photo__title">Гора Эльбрус</h2>
+                        <img
+                            class="photo__like"
+                            src="./images/like.png"
+                            alt="лайк"
+                        />
+                    </div>
+                </div>
+                <div class="photo">
+                    <img
+                        class="photo__item"
+                        src="./images/image3.png"
+                        alt="Домбай"
+                    />
+                    <div class="photo__disription">
+                        <h2 class="photo__title">Домбай</h2>
+                        <img
+                            class="photo__like"
+                            src="./images/like.png"
+                            alt="лайк"
+                        />
+                    </div>
+                </div>
+                <div class="photo">
+                    <img
+                        class="photo__item"
+                        src="./images/image4.png"
+                        alt="Гора Эльбрус"
+                    />
+                    <div class="photo__disription">
+                        <h2 class="photo__title">Гора Эльбрус</h2>
+                        <img
+                            class="photo__like"
+                            src="./images/like.png"
+                            alt="лайк"
+                        />
+                    </div>
+                </div>
+                <div class="photo">
+                    <img
+                        class="photo__item"
+                        src="./images/image5.png"
+                        alt="Домбай"
+                    />
+                    <div class="photo__disription">
+                        <h2 class="photo__title">Домбай</h2>
+                        <img
+                            class="photo__like"
+                            src="./images/like.png"
+                            alt="лайк"
+                        />
+                    </div>
+                </div>
+                <div class="photo">
+                    <img
+                        class="photo__item"
+                        src="./images/image6.png"
+                        alt="Карачаево"
+                    />
+                    <div class="photo__disription">
+                        <h2 class="photo__title">Карачаево-Ч...</h2>
+                        <img
+                            class="photo__like"
+                            src="./images/like.png"
+                            alt="лайк"
+                        />
+                    </div>
+                </div>
+            </section>
+
+            <div class="popup">
+                <div class="popup__container">
+                    <button class="popup__close" type="button"></button>
+                    <form class="popup__content">
+                        <h2 class="popup__title">Редактировать профиль</h2>
+                        <div class="popup__info">
+                            <input
+                                class="popup__input_type_name"
+                                name="popup__edit-profile-name"
+                                type="text"
+                                placeholder="Имя профиля"
+                                value="Жак-Ив Кусто"
+                            />
+                            <div class="popup__line"></div>
+                        </div>
+                        <div class="popup__info">
+                            <input
+                                class="popup__input_type_description"
+                                name="popup__edit-profile-description"
+                                type="text"
+                                placeholder="Описание провиля"
+                                value="Исследователь океана"
+                            />
+                            <div class="popup__line"></div>
+                        </div>
+                        <button class="popup__add-button" type="submit">
+                            Сохранить
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+        </footer>
+        <script src="./script/index.js"></script>
+    </body>
+</html>
