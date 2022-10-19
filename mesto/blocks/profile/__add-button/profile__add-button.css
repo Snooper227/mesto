@@ -14,30 +14,14 @@
     opacity: 0.6;
 }
 
-.profile__add-button_krest {
-    width: 22px;
-    height: 22px;
-    margin: auto;
-}
-
 @media screen and (max-width: calc(768px + 20px)) {
     .profile__add-button {
         width: 282px;
-    }
-
-    .profile__add-button_krest {
-        width: 16px;
-        height: 16px;
     }
 }
 
 @media screen and (max-width: calc(320px + 20px)) {
     .profile__add-button {
         width: 282px;
-    }
-
-    .profile__add-button_krest {
-        width: 16px;
-        height: 16px;
     }
 }

@@ -1,0 +1,19 @@
+.profile__add-button__krest {
+    width: 22px;
+    height: 22px;
+    margin: auto;
+}
+
+@media screen and (max-width: calc(768px + 20px)) {
+    .profile__add-button__krest {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+@media screen and (max-width: calc(320px + 20px)) {
+    .profile__add-button__krest {
+        width: 16px;
+        height: 16px;
+    }
+}
