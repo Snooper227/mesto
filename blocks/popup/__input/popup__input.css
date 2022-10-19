@@ -1,11 +1,11 @@
-.popup__input_type_name {
+.popup-info__input_type_name {
     max-width: 358px;
     width: 100%;
     margin-bottom: 13px;
     border: none;
 }
 
-.popup__input_type_description {
+.popup-info__input_type_description {
     max-width: 358px;
     width: 100%;
     margin-bottom: 13px;
@@ -13,12 +13,12 @@
 }
 
 @media screen and (max-width: calc(320px + 20px)) {
-    .popup__input_type_name {
+    .popup-info__input_type_name {
         max-width: 238px;
         width: 100%;
     }
 
-    .popup__input_type_description {
+    .popup-info__input_type_description {
         max-width: 238px;
         width: 100%;
     }
