@@ -1,5 +1,4 @@
-.footer__copyright {
-    color: #545454;
+.profile__info_subtitle {
     font-family: 'Inter', Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -7,11 +6,15 @@
     line-height: 22px;
     margin: 0;
     padding: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 @media screen and (max-width: calc(768px + 20px)) {
-    .footer__copyright {
+    .profile__info_subtitle {
         font-size: 14px;
         line-height: 17px;
+        text-align: center;
     }
 }

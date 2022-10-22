@@ -13,11 +13,3 @@
         margin-left: 27px;
     }
 }
-
-@media screen and (max-width: calc(320px + 20px)) {
-    .header__logo {
-        max-width: 104px;
-        margin-bottom: 32px;
-        margin-left: 27px;
-    }
-}

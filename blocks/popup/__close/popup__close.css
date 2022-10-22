@@ -1,15 +1,16 @@
 .popup__close {
-    background: url('../../../images/closeIcon.png');
+    background: url('../../../images/close_icon.svg');
+    position: absolute;
     width: 32px;
     height: 32px;
-    margin-left: 40px;
-    margin-bottom: 8px;
+    right: -40px;
+    top: -40px;
     border: 0;
-    align-self: end;
 }
 
 .popup__close:hover {
     opacity: 0.6;
+    cursor: pointer;
 }
 
 @media screen and (max-width: calc(320px + 20px)) {
@@ -17,8 +18,7 @@
     .popup__close {
         width: 20px;
         height: 20px;
-        margin: 0;
-        margin-bottom: 16px;
+        right: 0;
         padding: 0;
     }
 }

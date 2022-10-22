@@ -10,10 +10,3 @@
         height: 16px;
     }
 }
-
-@media screen and (max-width: calc(320px + 20px)) {
-    .profile__close {
-        width: 16px;
-        height: 16px;
-    }
-}

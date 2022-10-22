@@ -9,8 +9,7 @@
     </head>
     <body class="page">
         <header class="header">
-            <img src="./images/Vector.png" class="header__logo" alt="Лого" />
-            <div class="header__line"></div>
+            <img src="./images/Vector.svg" class="header__logo" alt="Лого" />
         </header>
 
         <main class="content">
@@ -18,24 +17,24 @@
                 <div class="profile__container">
                     <img
                         class="profile__avatar"
-                        src="./images/avatar.png"
+                        src="./images/Avatar.png"
                         alt="аватар"
                     />
-                    <div class="profile-info">
-                        <h1 class="profile-info__title">Жак-Ив Кусто</h1>
+                    <div class="profile__info">
+                        <h1 class="profile__info_title">Жак-Ив Кусто</h1>
                         <button
-                            class="profile-info__popup-open"
+                            class="profile__info_popup-open"
                             type="button"
                         ></button>
-                        <p class="profile-info__subtitle">
+                        <p class="profile__info_subtitle">
                             Исследователь океана
                         </p>
                     </div>
                 </div>
-                <button class="profile__add-button">
+                <button class="profile__add-button" type="button">
                     <img
                         class="profile__close"
-                        src="./images/krest.png"
+                        src="./images/krest.svg"
                         alt="крестик"
                     />
                 </button>
@@ -48,13 +47,9 @@
                         src="./images/image1.png"
                         alt="Карачаевск"
                     />
-                    <div class="photo__disription">
+                    <div class="photo__discription">
                         <h2 class="photo__title">Карачаевск</h2>
-                        <img
-                            class="photo__like"
-                            src="./images/like.png"
-                            alt="лайк"
-                        />
+                        <button class="photo__like" type="button"></button>
                     </div>
                 </div>
                 <div class="photo">
@@ -63,13 +58,9 @@
                         src="./images/image2.png"
                         alt="Гора Эльбрус"
                     />
-                    <div class="photo__disription">
+                    <div class="photo__discription">
                         <h2 class="photo__title">Гора Эльбрус</h2>
-                        <img
-                            class="photo__like"
-                            src="./images/like.png"
-                            alt="лайк"
-                        />
+                        <button class="photo__like" type="button"></button>
                     </div>
                 </div>
                 <div class="photo">
@@ -78,13 +69,9 @@
                         src="./images/image3.png"
                         alt="Домбай"
                     />
-                    <div class="photo__disription">
+                    <div class="photo__discription">
                         <h2 class="photo__title">Домбай</h2>
-                        <img
-                            class="photo__like"
-                            src="./images/like.png"
-                            alt="лайк"
-                        />
+                        <button class="photo__like" type="button"></button>
                     </div>
                 </div>
                 <div class="photo">
@@ -93,13 +80,9 @@
                         src="./images/image4.png"
                         alt="Гора Эльбрус"
                     />
-                    <div class="photo__disription">
+                    <div class="photo__discription">
                         <h2 class="photo__title">Гора Эльбрус</h2>
-                        <img
-                            class="photo__like"
-                            src="./images/like.png"
-                            alt="лайк"
-                        />
+                        <button class="photo__like" type="button"></button>
                     </div>
                 </div>
                 <div class="photo">
@@ -108,13 +91,9 @@
                         src="./images/image5.png"
                         alt="Домбай"
                     />
-                    <div class="photo__disription">
+                    <div class="photo__discription">
                         <h2 class="photo__title">Домбай</h2>
-                        <img
-                            class="photo__like"
-                            src="./images/like.png"
-                            alt="лайк"
-                        />
+                        <button class="photo__like" type="button"></button>
                     </div>
                 </div>
                 <div class="photo">
@@ -123,53 +102,43 @@
                         src="./images/image6.png"
                         alt="Карачаево"
                     />
-                    <div class="photo__disription">
+                    <div class="photo__discription">
                         <h2 class="photo__title">Карачаево-Ч...</h2>
-                        <img
-                            class="photo__like"
-                            src="./images/like.png"
-                            alt="лайк"
-                        />
+                        <button class="photo__like" type="button"></button>
                     </div>
                 </div>
             </section>
-
-            <div class="popup">
-                <div class="popup__container">
-                    <button class="popup__close" type="button"></button>
-                    <form class="popup__content">
-                        <h2 class="popup__title">Редактировать профиль</h2>
-                        <div class="popup__info">
-                            <input
-                                class="popup__name"
-                                name="popup-info__edit-profile-name"
-                                type="text"
-                                placeholder="Имя профиля"
-                                value="Жак-Ив Кусто"
-                            />
-                            <div class="popup__line"></div>
-                        </div>
-                        <div class="popup__info">
-                            <input
-                                class="popup__description"
-                                name="popup-info__edit-profile-description"
-                                type="text"
-                                placeholder="Описание провиля"
-                                value="Исследователь океана"
-                            />
-                            <div class="popup__line"></div>
-                        </div>
-                        <button class="popup__add-button" type="submit">
-                            Сохранить
-                        </button>
-                    </form>
-                </div>
-            </div>
         </main>
 
         <footer class="footer">
             <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
         </footer>
+
+        <div class="popup">
+            <div class="popup__container">
+                <button class="popup__close" type="button"></button>
+                <form class="popup__content">
+                    <h2 class="popup__title">Редактировать профиль</h2>
+                    <input
+                        class="popup__input_name"
+                        name="name"
+                        type="text"
+                        placeholder="Имя профиля"
+                        value="Жак-Ив Кусто"
+                    />
+                    <input
+                        class="popup__input_description"
+                        name="description"
+                        type="text"
+                        placeholder="Описание провиля"
+                        value="Исследователь океана"
+                    />
+                    <button class="popup__add-button" type="submit">
+                        Сохранить
+                    </button>
+                </form>
+            </div>
+        </div>
         <script src="./script/index.js"></script>
     </body>
 </html>

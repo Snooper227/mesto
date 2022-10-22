@@ -1,4 +1,4 @@
-.profile-info {
+.profile__info {
     max-width: 336px;
     display: grid;
     grid-template-columns: 1fr 24px;
@@ -8,21 +8,16 @@
 }
 
 @media screen and (max-width: calc(768px + 20px)) {
-    .profile-info {
+    .profile__info {
         max-width: 730px;
         grid-template-columns: 1fr 18px;
-        grid-template-rows: repeat(2, minmax(min-content, max-content));
         gap: 14px 10px;
         margin-bottom: 36px;
     }
 }
 
 @media screen and (max-width: calc(320px + 20px)) {
-    .profile-info {
+    .profile__info {
         max-width: 282px;
-        grid-template-columns: 1fr 18px;
-        grid-template-rows: repeat(2, minmax(min-content, max-content));
-        gap: 14px 10px;
-        margin-bottom: 36px;
     }
 }

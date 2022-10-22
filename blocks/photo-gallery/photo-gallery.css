@@ -11,31 +11,23 @@
     .photo-gallery {
         max-width: 880px;
         margin: 0 auto 67px auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(auto, 282px));
-        grid-template-rows: repeat(auto-fit, minmax(361px, auto));
-        gap: 20px 17px;
+        justify-content: center;
     }
 }
 
 @media screen and (max-width: calc(768px + 20px)) {
     .photo-gallery {
         max-width: 730px;
-        margin: 0 auto 67px auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(auto, 282px));
-        grid-template-rows: repeat(auto-fit, minmax(361px, auto));
-        gap: 20px 17px;
     }
 }
 
 @media screen and (max-width: calc(320px + 20px)) {
     .photo-gallery {
         max-width: 282px;
-        margin: 0 auto 67px auto;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(282px, auto));
-        grid-template-rows: repeat(auto-fit, minmax(361px, auto));
+        grid-template-rows: repeat(auto-fit, minmax(361px, auto)); 
         gap: 20px;
+        margin: 0 auto 48px auto;
     }
 }

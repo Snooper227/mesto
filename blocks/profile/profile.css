@@ -24,7 +24,5 @@
 @media screen and (max-width: calc(320px + 20px)) {
     .profile {
         min-width: 282px;
-        margin: 42px auto 36px auto;
-        flex-direction: column;
     }
 }
