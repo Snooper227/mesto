@@ -1,11 +1,11 @@
 //Выборка DOM элементов
 const popupElement = document.querySelector('.popup');
 const popupCloseButtonElement = popupElement.querySelector('.popup__close');
-const popupOpenButtonElement = document.querySelector('.profile__info_popup-open');
+const popupOpenButtonElement = document.querySelector('.profile__popup-open');
 const addButton = popupElement.querySelector('.popup__add-button');
 
-let profileName = document.querySelector('.profile__info_title');
-let profileDescription = document.querySelector('.profile__info_subtitle');
+let profileName = document.querySelector('.profile__title');
+let profileDescription = document.querySelector('.profile__subtitle');
 
 
 const openPopup = function(){
