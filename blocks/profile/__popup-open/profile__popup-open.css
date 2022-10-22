@@ -1,5 +1,6 @@
 .profile__popup-open {
     background: url(../../../images/Edit_Button.svg);
+    padding: 0;
     background-color: #000000;
     border: 1px;
     border-color: white;
@@ -17,6 +18,6 @@
     .profile__popup-open {
         width: 18px;
         height: 18px;
-        padding: 0;
+        
     }
 }
