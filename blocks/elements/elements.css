@@ -1,4 +1,4 @@
-.photo-gallery {
+.elements {
     max-width: 880px;
     margin: 0 0 67px 0;
     display: grid;
@@ -8,20 +8,20 @@
 }
 
 @media screen and (max-width: calc(1024px + 20px)) {
-    .photo-gallery {
+    .elements {
         margin: 0 auto 67px auto;
         justify-content: center;
     }
 }
 
 @media screen and (max-width: calc(768px + 20px)) {
-    .photo-gallery {
+    .elements {
         max-width: 730px;
     }
 }
 
 @media screen and (max-width: calc(320px + 20px)) {
-    .photo-gallery {
+    .elements {
         max-width: 282px;
         grid-template-columns: repeat(auto-fit, minmax(282px, auto));
         gap: 20px;
