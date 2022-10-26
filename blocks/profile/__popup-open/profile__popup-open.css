@@ -1,9 +1,10 @@
 .profile__popup-open {
-    background: url(../../../images/Edit_Button.svg);
+    background: url(../../../images/edit_button.svg);
+    background-repeat: no-repeat;
+    background-position: center;
     padding: 0;
     background-color: #000000;
-    border: 1px;
-    border-color: white;
+    border: 1px solid #FFFFFF;
     width: 24px;
     height: 24px;
     box-sizing: border-box;

@@ -4,6 +4,7 @@
     margin: 45px auto 40px auto;
     padding: 0;
     flex-direction: column;
+    border-bottom: 1px solid #545454;;
 }
 
 @media screen and (max-width: calc(768px + 20px)) {

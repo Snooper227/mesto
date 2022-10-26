@@ -8,13 +8,6 @@
     .footer {
         max-width: 282px;
         margin: 0 auto 36px 19px;
-        padding: 0;
-    }
-}
-
-@media screen and (max-width: calc(768px + 20px)) {
-    .footer {
-        max-width: 282px;
     }
 }
 

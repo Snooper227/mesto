@@ -17,7 +17,7 @@
                 <div class="profile__container">
                     <img
                         class="profile__avatar"
-                        src="./images/Avatar.png"
+                        src="./images/avatar.png"
                         alt="аватар"
                     />
                     <div class="profile__info">
@@ -26,9 +26,7 @@
                             class="profile__popup-open"
                             type="button"
                         ></button>
-                        <p class="profile__subtitle">
-                            Исследователь океана
-                        </p>
+                        <p class="profile__subtitle">Исследователь океана</p>
                     </div>
                 </div>
                 <button class="profile__add-button" type="button">
@@ -41,7 +39,7 @@
             </section>
 
             <section class="photo-gallery">
-                <div class="photo">
+                <div class="photo-gallery__photo">
                     <img
                         class="photo__item"
                         src="./images/image1.png"
@@ -52,7 +50,7 @@
                         <button class="photo__like" type="button"></button>
                     </div>
                 </div>
-                <div class="photo">
+                <div class="photo-gallery__photo">
                     <img
                         class="photo__item"
                         src="./images/image2.png"
@@ -63,7 +61,7 @@
                         <button class="photo__like" type="button"></button>
                     </div>
                 </div>
-                <div class="photo">
+                <div class="photo-gallery__photo">
                     <img
                         class="photo__item"
                         src="./images/image3.png"
@@ -74,7 +72,7 @@
                         <button class="photo__like" type="button"></button>
                     </div>
                 </div>
-                <div class="photo">
+                <div class="photo-gallery__photo">
                     <img
                         class="photo__item"
                         src="./images/image4.png"
@@ -85,7 +83,7 @@
                         <button class="photo__like" type="button"></button>
                     </div>
                 </div>
-                <div class="photo">
+                <div class="photo-gallery__photo">
                     <img
                         class="photo__item"
                         src="./images/image5.png"
@@ -96,7 +94,7 @@
                         <button class="photo__like" type="button"></button>
                     </div>
                 </div>
-                <div class="photo">
+                <div class="photo-gallery__photo">
                     <img
                         class="photo__item"
                         src="./images/image6.png"
@@ -117,17 +115,17 @@
         <div class="popup">
             <div class="popup__container">
                 <button class="popup__close" type="button"></button>
-                <form class="popup__content">
+                <form class="popup__content" name="editPopup">
                     <h2 class="popup__title">Редактировать профиль</h2>
                     <input
-                        class="popup__input popup__input_name"
+                        class="popup__input popup__input-profile-name"
                         name="name"
                         type="text"
                         placeholder="Имя профиля"
                         value="Жак-Ив Кусто"
                     />
                     <input
-                        class="popup__input popup__input_description"
+                        class="popup__input popup__input-profile-discription"
                         name="description"
                         type="text"
                         placeholder="Описание провиля"
