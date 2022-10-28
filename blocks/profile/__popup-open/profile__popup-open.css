@@ -1,5 +1,5 @@
 .profile__popup-open {
-    background: url('../../../images/edit_button.svg');
+    background-image: url('../../../images/edit_button.svg');
     background-repeat: no-repeat;
     background-position: center;
     padding: 0;
@@ -17,10 +17,8 @@
 
 @media screen and (max-width: calc(768px + 20px)) {
     .profile__popup-open {
-        background: url('../../../images/edit_button_mini.svg');
+        background-image: url('../../../images/edit_button_mini.svg');
         width: 18px;
         height: 18px;
-        background-repeat: no-repeat;
-        background-position: center;
     }
 }
