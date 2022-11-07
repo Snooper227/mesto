@@ -39,72 +39,7 @@
             </section>
 
             <section class="elements">
-                <div class="element">
-                    <img
-                        class="element__photo"
-                        src="./images/image1.png"
-                        alt="Карачаевск"
-                    />
-                    <div class="element__discription">
-                        <h2 class="element__title">Карачаевск</h2>
-                        <button class="element__like" type="button"></button>
-                    </div>
-                </div>
-                <div class="element">
-                    <img
-                        class="element__photo"
-                        src="./images/image2.png"
-                        alt="Гора Эльбрус"
-                    />
-                    <div class="element__discription">
-                        <h2 class="element__title">Гора Эльбрус</h2>
-                        <button class="element__like" type="button"></button>
-                    </div>
-                </div>
-                <div class="element">
-                    <img
-                        class="element__photo"
-                        src="./images/image3.png"
-                        alt="Домбай"
-                    />
-                    <div class="element__discription">
-                        <h2 class="element__title">Домбай</h2>
-                        <button class="element__like" type="button"></button>
-                    </div>
-                </div>
-                <div class="element">
-                    <img
-                        class="element__photo"
-                        src="./images/image4.png"
-                        alt="Гора Эльбрус"
-                    />
-                    <div class="element__discription">
-                        <h2 class="element__title">Гора Эльбрус</h2>
-                        <button class="element__like" type="button"></button>
-                    </div>
-                </div>
-                <div class="element">
-                    <img
-                        class="element__photo"
-                        src="./images/image5.png"
-                        alt="Домбай"
-                    />
-                    <div class="element__discription">
-                        <h2 class="element__title">Домбай</h2>
-                        <button class="element__like" type="button"></button>
-                    </div>
-                </div>
-                <div class="element">
-                    <img
-                        class="element__photo"
-                        src="./images/image6.png"
-                        alt="Карачаево"
-                    />
-                    <div class="element__discription">
-                        <h2 class="element__title">Карачаево-Ч...</h2>
-                        <button class="element__like" type="button"></button>
-                    </div>
-                </div>
+
             </section>
         </main>
 
@@ -112,10 +47,10 @@
             <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
         </footer>
 
-        <div class="popup">
+        <div class="popup popup_type_edit">
             <div class="popup__container">
                 <button class="popup__close" type="button"></button>
-                <form class="popup__content" name="editPopup">
+                <form class="popup__content popup__content_edit" name="editPopup">
                     <h2 class="popup__title">Редактировать профиль</h2>
                     <input
                         class="popup__input popup__input_type_name"
@@ -131,12 +66,57 @@
                         placeholder="Описание провиля"
                         value="Исследователь океана"
                     />
-                    <button class="popup__add-button" type="submit">
+                    <button class="popup__add-button popup__add-button_type_edit" type="submit">
                         Сохранить
                     </button>
                 </form>
             </div>
         </div>
+
+        <div class="popup popup_type_add">
+            <div class="popup__container">
+                <button class="popup__close" type="button"></button>
+                <form class="popup__content popup__content_new-card" name="Popup_type_new-card">
+                    <h2 class="popup__title">Новое место</h2>
+                    <input
+                        class="popup__input popup__input_type_title"
+                        name="title"
+                        type="text"
+                        placeholder="Название"
+                        value=""
+                    />
+                    <input
+                        class="popup__input popup__input_type_address"
+                        name="address"
+                        type="text"
+                        placeholder="Ссылка на картинку"
+                        value=""
+                    />
+                    <button class="popup__add-button popup__add-button_type_new-card" type="submit">
+                        Создать
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="popup popup_type_image">
+            <div class="popup__container-image">
+                <button class="popup__close popup__close_image" type="button"></button>
+                <img class="popup__image" src="" alt="">
+                <p class="popup__about"></p>
+            </div>
+        </div>
+
+        <template class="element-template">
+            <div class="element">
+                <button class="element__basket" type="button"></button>
+                <img class="element__photo element__photo_type_popup" src="" alt="">
+                <div class="element__discription">
+                    <h2 class="element__title"></h2>
+                    <button class="element__like" type="button"></button>
+              </div>
+              </div>
+        </template>
         <script src="./script/index.js"></script>
     </body>
 </html>
