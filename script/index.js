@@ -14,8 +14,8 @@ const addAddButton = addFormModalWindow.querySelector('.popup__add-button_type_n
 const profileName = document.querySelector('.profile__title'); 
 const profileDescription = document.querySelector('.profile__subtitle'); 
 const profileForm = document.forms["profile-form"];
-let nameInput = profileForm.querySelector('.popup__input_type_name'); 
-let jobInput = profileForm.querySelector('.popup__input_type_discription'); 
+const nameInput = profileForm.querySelector('.popup__input_type_name'); 
+const jobInput = profileForm.querySelector('.popup__input_type_discription'); 
 
 const popupCloseImg = document.querySelector('.popup__close_image');
 const closeButtons = document.querySelectorAll('.popup__close');
@@ -96,8 +96,8 @@ const items = [
 
 const cardsContainer = document.querySelector('.elements');
 const cardForm = document.forms["card-form"];
-let linkInput = cardForm.querySelector('.popup__input_type_link');
-let titleInput = cardForm.querySelector('.popup__input_type_title');
+const linkInput = cardForm.querySelector('.popup__input_type_link');
+const titleInput = cardForm.querySelector('.popup__input_type_title');
 const itemTemplate = document.querySelector('.element-template').content;
 const imagePopup = document.querySelector('.popup_type_image');
 const imagePopupImg = imagePopup.querySelector('.popup__image');
@@ -120,9 +120,9 @@ const setDeleteHandler = (cardElement) => {
 function createCard(item) {
     const cardElement = itemTemplate.cloneNode(true);
     const cardPhoto = cardElement.querySelector('.element__photo');
-    const nameCard = cardElement.querySelector('.element__title').textContent = item.name;
-    const linkCard = cardPhoto.src = item.link;
-    const altCard = cardPhoto.alt = item.name;
+    cardElement.querySelector('.element__title').textContent = item.name;
+    cardPhoto.src = item.link;
+    cardPhoto.alt = item.name;
     cardElement.querySelector('.element__like').addEventListener('click', function (evt) {
         evt.target.classList.toggle('element__like_active');
     });
@@ -138,11 +138,11 @@ function createCard(item) {
     return cardElement
 }
 
-const getCardsItem = (element) => {
+const prependItem = (element) => {
     const cardElement = createCard(element);
     cardsContainer.prepend(cardElement);
 };
-items.forEach(getCardsItem)
+items.forEach(prependItem)
 
 function addCard(evt) {
     evt.preventDefault();
@@ -150,8 +150,7 @@ function addCard(evt) {
     const data ={
         name: titleInput.value, link: linkInput.value
     }
-    const cardElement = createCard(data);
-    cardsContainer.prepend(cardElement);
+    prependItem(data)
     closePopup(addFormModalWindow);
     evt.target.reset();
 };
