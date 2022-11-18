@@ -15,17 +15,36 @@ const profileName = document.querySelector('.profile__title');
 const profileDescription = document.querySelector('.profile__subtitle'); 
 const profileForm = document.forms["profile-form"];
 const nameInput = profileForm.querySelector('.popup__input_type_name'); 
-const jobInput = profileForm.querySelector('.popup__input_type_discription'); 
+const jobInput = profileForm.querySelector('.popup__input_type_discription');
 
 const popupCloseImg = document.querySelector('.popup__close_image');
 const closeButtons = document.querySelectorAll('.popup__close');
 
 function openPopup(popup) {
     popup.classList.add('popup_opened');
+    document.addEventListener('keydown', handleEscUp);
+    document.removeEventListener('keyup', handleEscUp);
 }
 function closePopup(popup) {
     popup.classList.remove('popup_opened');
 }
+
+const closePopupByClickOnOverlay = (event) => {
+    if (event.target == event.currentTarget){ 
+        event.currentTarget.classList.remove('popup_opened');
+    }
+} 
+
+editFormModalWindow.addEventListener('click', closePopupByClickOnOverlay);
+addFormModalWindow.addEventListener('click', closePopupByClickOnOverlay);
+
+const handleEscUp = (evt) => {
+    if (evt.key === "Escape") {
+        const handleOpenedPopup = document.querySelector('.popup_opened');
+        closePopup(handleOpenedPopup);
+    }
+}
+
 closeButtons.forEach((button) => {
     const popup = button.closest('.popup');
     button.addEventListener('click', () => closePopup(popup));
@@ -102,6 +121,7 @@ const itemTemplate = document.querySelector('.element-template').content;
 const imagePopup = document.querySelector('.popup_type_image');
 const imagePopupImg = imagePopup.querySelector('.popup__image');
 const imagePopupTitle = imagePopup.querySelector('.popup__about');
+imagePopup.addEventListener('click', closePopupByClickOnOverlay);
 
 
 const handelCardDelete = (event) => {
@@ -156,3 +176,4 @@ function addCard(evt) {
 };
 
 cardForm.addEventListener('submit', addCard);
+enableValidation(selectors);
