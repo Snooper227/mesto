@@ -32,21 +32,21 @@ const hideInputError = (inputElement, errorElement, errorClass, inputErrorClass)
     inputElement.classList.remove(inputErrorClass);
 }
 
-const disabledButton = (buttonElement) => {
+const disabledButton = (buttonElement, inactiveButtonClass) => {
     buttonElement.setAttribute("disabled", true);
+    buttonElement.classList.add(inactiveButtonClass);
 }
-const enableButton = (buttonElement) => {
+const enableButton = (buttonElement, inactiveButtonClass) => {
     buttonElement.removeAttribute("disabled");
+    buttonElement.classList.remove(inactiveButtonClass);
 }
 const toggleButtonState = (inputList, buttonElement, inactiveButtonClass) => {
 	const hasInvalidInput = inputList.some(inputElement => !inputElement.validity.valid);
   
 	if (hasInvalidInput) {
-        disabledButton(buttonElement);
-        buttonElement.classList.add(inactiveButtonClass);
+        disabledButton(buttonElement, inactiveButtonClass);
 	} else {
-        enableButton(buttonElement);
-        buttonElement.classList.remove(inactiveButtonClass);
+        enableButton(buttonElement, inactiveButtonClass);
 	}
 };
 

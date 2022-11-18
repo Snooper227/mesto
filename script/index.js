@@ -55,15 +55,13 @@ popupEditOpenButtonElement.addEventListener('click', () => {
     openPopup(editFormModalWindow);
     nameInput.value = profileName.textContent; 
     jobInput.value = profileDescription.textContent;
-    disabledButton(addEditButton);
-    addEditButton.classList.add('popup__button_disabled');
+    disabledButton(addEditButton, 'popup__button_disabled');
 }); 
 
 
 popupAddOpenButtonElement.addEventListener('click', () => {
     openPopup(addFormModalWindow);
-    disabledButton(addAddButton);
-    addAddButton.classList.add('popup__button_disabled');
+    disabledButton(addAddButton, 'popup__button_disabled');
 }); 
 
 // Находим форму в DOM 
