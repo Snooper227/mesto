@@ -1,4 +1,4 @@
-const selectors = {
+const validationConfig = {
 	formSelector: '.popup__form',
     inputSelector: '.popup__input',
     submitButtonSelector: '.popup__button',
@@ -7,7 +7,7 @@ const selectors = {
     errorClass: 'popup__input-error_visible'
 }
 
-const checkInputValidity = (inputElement, {errorClass, inputErrorClass}) => {
+const toggleInputErrorState = (inputElement, {errorClass, inputErrorClass}) => {
 	const isValid = inputElement.validity.valid;
 
 	const formSection = inputElement.closest('.popup__section');
@@ -32,24 +32,26 @@ const hideInputError = (inputElement, errorElement, errorClass, inputErrorClass)
     inputElement.classList.remove(inputErrorClass);
 }
 
+const disabledButton = (buttonElement) => {
+    buttonElement.setAttribute("disabled", true);
+}
+const enableButton = (buttonElement) => {
+    buttonElement.removeAttribute("disabled");
+}
 const toggleButtonState = (inputList, buttonElement, inactiveButtonClass) => {
 	const hasInvalidInput = inputList.some(inputElement => !inputElement.validity.valid);
   
 	if (hasInvalidInput) {
-	  buttonElement.setAttribute("disabled", true);
-	  buttonElement.classList.add(inactiveButtonClass);
+        disabledButton(buttonElement);
+        buttonElement.classList.add(inactiveButtonClass);
 	} else {
-	  buttonElement.removeAttribute("disabled");
-	  buttonElement.classList.remove(inactiveButtonClass);
+        enableButton(buttonElement);
+        buttonElement.classList.remove(inactiveButtonClass);
 	}
 };
 
 const setEventListeners = (formElement, {inputSelector, submitButtonSelector, inactiveButtonClass, ...rest}) => {
 
-	formElement.addEventListener('submit', (event) => {
-		event.preventDefault();
-	})
-	
 	const inputList = Array.from(formElement.querySelectorAll(inputSelector));
 	const submitButton = formElement.querySelector(submitButtonSelector);
 	
@@ -57,7 +59,7 @@ const setEventListeners = (formElement, {inputSelector, submitButtonSelector, in
 	
 	inputList.forEach(inputElement => {
 		inputElement.addEventListener('input', () => {
-			checkInputValidity(inputElement, rest);
+			toggleInputErrorState(inputElement, rest);
 			toggleButtonState(inputList, submitButton, inactiveButtonClass)
 		})
 	})

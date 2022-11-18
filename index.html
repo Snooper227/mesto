@@ -58,7 +58,7 @@
                                 name="name"
                                 type="text"
                                 id="name"
-                                placeholder="Имя профиля"
+                                placeholder="Имя"
                                 value="Жак-Ив Кусто"
                                 minlength="2" 
                                 maxlength="40"
@@ -72,7 +72,7 @@
                                 name="description"
                                 type="text"
                                 id="discription"
-                                placeholder="Описание провиля"
+                                placeholder="О себе"
                                 value="Исследователь океана"
                                 minlength="2" 
                                 maxlength="200"
@@ -90,7 +90,7 @@
         <div class="popup popup_type_add">
             <div class="popup__container">
                 <button class="popup__close" type="button"></button>
-                <form class="popup__form popup__form_new-card" name="card-form" method='post' novalidate>
+                <form class="popup__form popup__form_new-card" name="card-form" novalidate>
                         <h2 class="popup__title">Новое место</h2>
                         <section class="popup__section">
                             <input
@@ -99,7 +99,6 @@
                                 type="text"
                                 id="new-place"
                                 placeholder="Название"
-                                value=""
                                 minlength="2" 
                                 maxlength="30"
                                 required
@@ -113,7 +112,6 @@
                                 type="url"
                                 id="address"
                                 placeholder="Ссылка на картинку"
-                                value=""
                                 required
                             />
                             <span class="popup__input-error"></span>
@@ -128,7 +126,7 @@
         <div class="popup popup_type_image">
             <div class="popup__container-image">
                 <button class="popup__close popup__close_image" type="button"></button>
-                <img class="popup__image" src=" " alt=" ">
+                <img class="popup__image" src="#" alt=" ">
                 <p class="popup__about"></p>
             </div>
         </div>

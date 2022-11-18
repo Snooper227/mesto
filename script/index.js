@@ -23,15 +23,15 @@ const closeButtons = document.querySelectorAll('.popup__close');
 function openPopup(popup) {
     popup.classList.add('popup_opened');
     document.addEventListener('keydown', handleEscUp);
-    document.removeEventListener('keyup', handleEscUp);
 }
 function closePopup(popup) {
     popup.classList.remove('popup_opened');
+    document.removeEventListener('keydown', handleEscUp);
 }
 
 const closePopupByClickOnOverlay = (event) => {
     if (event.target == event.currentTarget){ 
-        event.currentTarget.classList.remove('popup_opened');
+        closePopup(event.currentTarget);
     }
 } 
 
@@ -40,8 +40,8 @@ addFormModalWindow.addEventListener('click', closePopupByClickOnOverlay);
 
 const handleEscUp = (evt) => {
     if (evt.key === "Escape") {
-        const handleOpenedPopup = document.querySelector('.popup_opened');
-        closePopup(handleOpenedPopup);
+        const openedPopup = document.querySelector('.popup_opened');
+        closePopup(openedPopup);
     }
 }
 
@@ -55,11 +55,15 @@ popupEditOpenButtonElement.addEventListener('click', () => {
     openPopup(editFormModalWindow);
     nameInput.value = profileName.textContent; 
     jobInput.value = profileDescription.textContent;
+    disabledButton(addEditButton);
+    addEditButton.classList.add('popup__button_disabled');
 }); 
 
 
 popupAddOpenButtonElement.addEventListener('click', () => {
     openPopup(addFormModalWindow);
+    disabledButton(addAddButton);
+    addAddButton.classList.add('popup__button_disabled');
 }); 
 
 // Находим форму в DOM 
@@ -85,7 +89,7 @@ function handleProfileFormSubmit (evt) {
 profileForm.addEventListener('submit', handleProfileFormSubmit); 
 
 //карточки и поп ап
-const items = [
+const initialItems = [
     {
         name: 'Архыз',
         link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
@@ -125,8 +129,7 @@ imagePopup.addEventListener('click', closePopupByClickOnOverlay);
 
 
 const handelCardDelete = (event) => {
-    const evtTarget = event.target;
-    const currentElement = evtTarget.closest('.element');
+    const currentElement = event.target.closest('.element');
     currentElement.remove();
 }
 
@@ -162,7 +165,7 @@ const prependItem = (element) => {
     const cardElement = createCard(element);
     cardsContainer.prepend(cardElement);
 };
-items.forEach(prependItem)
+initialItems.forEach(prependItem)
 
 function addCard(evt) {
     evt.preventDefault();
@@ -176,4 +179,4 @@ function addCard(evt) {
 };
 
 cardForm.addEventListener('submit', addCard);
-enableValidation(selectors);
+enableValidation(validationConfig);
