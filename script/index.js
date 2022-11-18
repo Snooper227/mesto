@@ -3,12 +3,12 @@
 const editFormModalWindow = document.querySelector('.popup_type_edit');
 const popupEditCloseButtonElement = editFormModalWindow.querySelector('.popup__close'); 
 const popupEditOpenButtonElement = document.querySelector('.profile__popup-open'); 
-const addEditButton = editFormModalWindow.querySelector('.popup__add-button_type_edit'); 
+const addEditButton = editFormModalWindow.querySelector('.popup__button_type_edit'); 
 //addPopup
 const addFormModalWindow = document.querySelector('.popup_type_add');
 const popupAddCloseButtonElement = addFormModalWindow.querySelector('.popup__close'); 
 const popupAddOpenButtonElement = document.querySelector('.profile__add-button'); 
-const addAddButton = addFormModalWindow.querySelector('.popup__add-button_type_new-card');
+const addAddButton = addFormModalWindow.querySelector('.popup__button_type_new-card');
 
 //editInput
 const profileName = document.querySelector('.profile__title'); 
