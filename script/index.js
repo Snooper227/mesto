@@ -1,4 +1,6 @@
-//Выборка DOM элементов
+import Card from './Card.js';
+import FormValidator from './FormValidator.js';
+
 //editPopup
 const editFormModalWindow = document.querySelector('.popup_type_edit');
 const popupEditCloseButtonElement = editFormModalWindow.querySelector('.popup__close'); 
@@ -51,17 +53,29 @@ closeButtons.forEach((button) => {
   });
 //Регистрируем обработчик событий по клику 
 
+const selectors = {
+	formSelector: '.popup__form',
+    inputSelector: '.popup__input',
+    submitButtonSelector: '.popup__button',
+    inactiveButtonClass: 'popup__button_disabled',
+    inputErrorClass: 'popup__input_type_error',
+    errorClass: 'popup__input-error_visible'
+}
+
+const editFormValidator = new FormValidator(selectors, editFormModalWindow);
+const cardFormValidator = new FormValidator(selectors, addFormModalWindow)
+
 popupEditOpenButtonElement.addEventListener('click', () => {
-    openPopup(editFormModalWindow);
     nameInput.value = profileName.textContent; 
     jobInput.value = profileDescription.textContent;
-    disabledButton(addEditButton, 'popup__button_disabled');
+    editFormValidator.disabledSubmitButton();
+    openPopup(editFormModalWindow);
 }); 
 
 
 popupAddOpenButtonElement.addEventListener('click', () => {
+    cardFormValidator.disabledSubmitButton();
     openPopup(addFormModalWindow);
-    disabledButton(addAddButton, 'popup__button_disabled');
 }); 
 
 // Находим форму в DOM 
@@ -119,62 +133,42 @@ const cardsContainer = document.querySelector('.elements');
 const cardForm = document.forms["card-form"];
 const linkInput = cardForm.querySelector('.popup__input_type_link');
 const titleInput = cardForm.querySelector('.popup__input_type_title');
-const itemTemplate = document.querySelector('.element-template').content;
 const imagePopup = document.querySelector('.popup_type_image');
 const imagePopupImg = imagePopup.querySelector('.popup__image');
 const imagePopupTitle = imagePopup.querySelector('.popup__about');
 imagePopup.addEventListener('click', closePopupByClickOnOverlay);
 
-
-const handelCardDelete = (event) => {
-    const currentElement = event.target.closest('.element');
-    currentElement.remove();
+function handelPopupOpenImage(title, link) {
+        imagePopupImg.src = link;
+        imagePopupTitle.textContent = title;
+        imagePopupImg.alt = title;
+        openPopup(imagePopup);
 }
 
 //popup image
 
-const setDeleteHandler = (cardElement) => {
-    const deleteButtonCard = cardElement.querySelector('.element__basket');
-    deleteButtonCard.addEventListener('click', handelCardDelete);
+const renderCard = (data, handelPopupOpenImage) => {
+    const newCard = new Card(data, handelPopupOpenImage);
+    cardsContainer.prepend(newCard.createCard())
 }
 
-function createCard(item) {
-    const cardElement = itemTemplate.cloneNode(true);
-    const cardPhoto = cardElement.querySelector('.element__photo');
-    cardElement.querySelector('.element__title').textContent = item.name;
-    cardPhoto.src = item.link;
-    cardPhoto.alt = item.name;
-    cardElement.querySelector('.element__like').addEventListener('click', function (evt) {
-        evt.target.classList.toggle('element__like_active');
-    });
-
-    const imgPopupOpen = cardElement.querySelector('.element__photo_type_popup');
-    imgPopupOpen.addEventListener('click', () => {
-        imagePopupImg.src = item.link;
-        imagePopupTitle.textContent = item.name;
-        imagePopupImg.alt = item.name;
-        openPopup(imagePopup);
-    });
-    setDeleteHandler(cardElement);
-    return cardElement
-}
-
-const prependItem = (element) => {
-    const cardElement = createCard(element);
-    cardsContainer.prepend(cardElement);
-};
-initialItems.forEach(prependItem)
+initialItems.forEach( (data) => {
+    renderCard(data, handelPopupOpenImage)
+})
 
 function addCard(evt) {
     evt.preventDefault();
 
-    const data ={
-        name: titleInput.value, link: linkInput.value
-    }
-    prependItem(data)
-    closePopup(addFormModalWindow);
-    evt.target.reset();
+   const data ={
+       name: titleInput.value, link: linkInput.value
+   }
+   const addNewCard = new Card(data, handelPopupOpenImage);
+   cardsContainer.prepend(addNewCard.createCard())
+   closePopup(addFormModalWindow);
+   evt.target.reset();
 };
 
 cardForm.addEventListener('submit', addCard);
-enableValidation(validationConfig);
+
+editFormValidator.enableValidation();
+cardFormValidator.enableValidation();
