@@ -57,28 +57,28 @@
                                 class="popup__input popup__input_type_name"
                                 name="name"
                                 type="text"
-                                id="name"
+                                id="name-input"
                                 placeholder="Имя"
                                 value="Жак-Ив Кусто"
                                 minlength="2" 
                                 maxlength="40"
                                 required
                             />
-                            <span class="popup__input-error"></span>
+                            <span class="popup__input-error" id="name-input-error"></span>
                         </section>
                         <section class="popup__section">
                             <input
                                 class="popup__input popup__input_type_discription"
                                 name="description"
                                 type="text"
-                                id="discription"
+                                id="discription-input"
                                 placeholder="О себе"
                                 value="Исследователь океана"
                                 minlength="2" 
                                 maxlength="200"
                                 required
                             />
-                            <span class="popup__input-error"></span>
+                            <span class="popup__input-error" id="discription-input-error"></span>
                         </section>
                         <button class="popup__button popup__button_type_edit" type="submit">
                             Сохранить
@@ -97,24 +97,24 @@
                                 class="popup__input popup__input_type_title"
                                 name="title"
                                 type="text"
-                                id="new-place"
+                                id="new-place-input"
                                 placeholder="Название"
                                 minlength="2" 
                                 maxlength="30"
                                 required
                             />
-                            <span class="popup__input-error"></span>
+                            <span class="popup__input-error" id="new-place-input-error"></span>
                         </section>
                         <section class="popup__section">
                             <input
                                 class="popup__input popup__input_type_link"
-                                name="link"
+                                name="link-input"
                                 type="url"
-                                id="address"
+                                id="link-input"
                                 placeholder="Ссылка на картинку"
                                 required
                             />
-                            <span class="popup__input-error"></span>
+                            <span class="popup__input-error" id="link-input-error"></span>
                         </section>
                         <button class="popup__button popup__button_type_new-card" type="submit">
                             Создать
@@ -141,8 +141,6 @@
               </div>
               </div>
         </template>
-        <script type="module" src="./script/Card.js" defer></script>
-        <script type="module" src="./script/FormValidator.js" defer></script>
         <script type="module" src="./script/index.js"  defer></script>
     </body>
 </html>

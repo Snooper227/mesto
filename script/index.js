@@ -2,15 +2,15 @@ import Card from './Card.js';
 import FormValidator from './FormValidator.js';
 
 //editPopup
-const editFormModalWindow = document.querySelector('.popup_type_edit');
-const popupEditCloseButtonElement = editFormModalWindow.querySelector('.popup__close'); 
+const popupProfile = document.querySelector('.popup_type_edit');
+const popupEditCloseButtonElement = popupProfile.querySelector('.popup__close'); 
 const popupEditOpenButtonElement = document.querySelector('.profile__popup-open'); 
-const addEditButton = editFormModalWindow.querySelector('.popup__button_type_edit'); 
+const addEditButton = popupProfile.querySelector('.popup__button_type_edit'); 
 //addPopup
-const addFormModalWindow = document.querySelector('.popup_type_add');
-const popupAddCloseButtonElement = addFormModalWindow.querySelector('.popup__close'); 
+const popupAdd = document.querySelector('.popup_type_add');
+const popupAddCloseButtonElement = popupAdd.querySelector('.popup__close'); 
 const popupAddOpenButtonElement = document.querySelector('.profile__add-button'); 
-const addAddButton = addFormModalWindow.querySelector('.popup__button_type_new-card');
+const addAddButton = popupAdd.querySelector('.popup__button_type_new-card');
 
 //editInput
 const profileName = document.querySelector('.profile__title'); 
@@ -37,8 +37,8 @@ const closePopupByClickOnOverlay = (event) => {
     }
 } 
 
-editFormModalWindow.addEventListener('click', closePopupByClickOnOverlay);
-addFormModalWindow.addEventListener('click', closePopupByClickOnOverlay);
+popupProfile.addEventListener('click', closePopupByClickOnOverlay);
+popupAdd.addEventListener('click', closePopupByClickOnOverlay);
 
 const handleEscUp = (evt) => {
     if (evt.key === "Escape") {
@@ -62,20 +62,20 @@ const selectors = {
     errorClass: 'popup__input-error_visible'
 }
 
-const editFormValidator = new FormValidator(selectors, editFormModalWindow);
-const cardFormValidator = new FormValidator(selectors, addFormModalWindow)
+const editFormValidator = new FormValidator(selectors, popupProfile);
+const cardFormValidator = new FormValidator(selectors, popupAdd)
 
 popupEditOpenButtonElement.addEventListener('click', () => {
     nameInput.value = profileName.textContent; 
     jobInput.value = profileDescription.textContent;
     editFormValidator.disabledSubmitButton();
-    openPopup(editFormModalWindow);
+    openPopup(popupProfile);
 }); 
 
 
 popupAddOpenButtonElement.addEventListener('click', () => {
     cardFormValidator.disabledSubmitButton();
-    openPopup(addFormModalWindow);
+    openPopup(popupAdd);
 }); 
 
 // Находим форму в DOM 
@@ -94,7 +94,7 @@ function handleProfileFormSubmit (evt) {
 
     profileDescription.textContent = jobInput.value; 
 
-    closePopup(editFormModalWindow); 
+    closePopup(popupProfile); 
 
 } 
 
@@ -164,7 +164,7 @@ function addCard(evt) {
    }
    const addNewCard = new Card(data, handelPopupOpenImage);
    cardsContainer.prepend(addNewCard.createCard())
-   closePopup(addFormModalWindow);
+   closePopup(popupAdd);
    evt.target.reset();
 };
 
