@@ -5,11 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Mesto</title>
-        <link rel="stylesheet" href="./pages/index.css" />
     </head>
     <body class="page">
         <header class="header">
-            <img src="./images/vector.svg" class="header__logo" alt="Лого" />
+            <img src="<%=require('./images/vector.svg')%>" class="header__logo" alt="Лого" />
         </header>
 
         <main class="content">
@@ -17,7 +16,7 @@
                 <div class="profile__container">
                     <img
                         class="profile__avatar"
-                        src="./images/avatar.png"
+                        src="<%=require('./images/avatar.png')%>"
                         alt="аватар"
                     />
                     <div class="profile__info">
@@ -32,7 +31,7 @@
                 <button class="profile__add-button" type="button">
                     <img
                         class="profile__close"
-                        src="./images/krest.svg"
+                        src="<%=require('./images/krest.svg')%>"
                         alt="крестик"
                     />
                 </button>
@@ -69,7 +68,7 @@
                         <section class="popup__section">
                             <input
                                 class="popup__input popup__input_type_discription"
-                                name="description"
+                                name="about"
                                 type="text"
                                 id="discription-input"
                                 placeholder="О себе"
@@ -108,7 +107,7 @@
                         <section class="popup__section">
                             <input
                                 class="popup__input popup__input_type_link"
-                                name="link-input"
+                                name="link"
                                 type="url"
                                 id="link-input"
                                 placeholder="Ссылка на картинку"
@@ -141,6 +140,5 @@
               </div>
               </div>
         </template>
-        <script type="module" src="./script/index.js"  defer></script>
     </body>
 </html>

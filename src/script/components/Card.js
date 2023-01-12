@@ -1,11 +1,11 @@
 export default class Card {
 
-    constructor(data, handelPopupOpenImage) {
+    constructor({data, handelCardClick}) {
         this._title = data.name;
         this._link = data.link;
-        this._handelPopupOpenImage = handelPopupOpenImage;
+        this._handelCardClick = handelCardClick;
     }
-
+    
     _getTemplate() {
         const cardElement = document
             .querySelector('.element-template')
@@ -27,7 +27,8 @@ export default class Card {
         this._cardPhoto.alt = this._title;
         this._setEventListeners();
 
-        return this._element
+        return this._element;
+        
     }
     _likeCards() {
         this._cardLikeButton.classList.toggle('element__like_active');
@@ -42,8 +43,11 @@ export default class Card {
         this._cardDelButton.addEventListener('click', () => {
             this._deleteCard()
         })
+        // this._cardPhoto.addEventListener('click', () => {
+        //     this.openPopup(this._title, this._link)
+        // })
         this._cardPhoto.addEventListener('click', () => {
-            this._handelPopupOpenImage(this._name, this._link)
+            this._handelCardClick(this._title, this._link);
         })
     }
 }
