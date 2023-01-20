@@ -7,8 +7,11 @@ export const popupAddOpenButtonElement = document.querySelector('.profile__add-b
 export const profileName = document.querySelector('.profile__title'); 
 export const profileAbout = document.querySelector('.profile__subtitle');
 export const templateSelector = '.element-template';
-
+export const avatarSelector = document.querySelector('.popup_type_avatar');
+export const popupAvatarOpenButtonElement = document.querySelector('.profile__avatar-edit-button');
+export const profileAvatar = document.querySelector('.profile__avatar');
 export const popupImageSelector = document.querySelector('.popup_type_image');
+export const popupConfirmationSelector = document.querySelector('.popup_type_confirm');
 
 export const selectors = {
 	formSelector: '.popup__form',

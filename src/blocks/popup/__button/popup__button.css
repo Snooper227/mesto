@@ -27,6 +27,9 @@
     -ms-user-select: none;
     user-select: none;
 }
+.popup__button_type_deleted{
+    margin-top: 38px;
+}
 .popup__button:hover {
     opacity: 0.8;
     cursor: pointer;
