@@ -67,7 +67,7 @@ export default class Api {
             method: 'DELETE',
             headers: this._headers,
         })
-        .then(this._checkRes);
+            .then(this._checkRes);
     }  
 
     addLike(_id) {

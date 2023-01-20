@@ -37,38 +37,38 @@ export default class Card {
         this._cardLikeButton = this._element.querySelector('.element__like')
 
         this._likesOutput = this._element.querySelector('.element__like-counter');
-        this._likesOutput.textContent = this._likes.length;
 
         if(this._ownerId !== this._userId) {
             this._cardDelButton.classList.add('element__basket_hidden')
         }
 
+        if(this.isLiked()) {
+            this._cardLikeButton.classList.add('element__like_active');
+        }
+
         this.updateLikesView();
+        this.updateLikesCounter(this._likes);
         this._setEventListeners();
 
         return this._element;
-        
     }
-    
+
+    deleteCard() {
+        this._element.remove();
+    }
 
     updateLikesCounter(data) {
         this._likesOutput.textContent = data.length;
     }
+    updateLikes(data) {
+        this._likes = data.likes
+    }
     updateLikesView() {
         if(this.isLiked()) {
-            this.likeCards();
+            this._cardLikeButton.classList.add('element__like_active');
         } else {
-            this.unlikeCards();
+            this._cardLikeButton.classList.remove('element__like_active');
         }
-    }
-
-    likeCards() {
-        this._cardLikeButton.classList.add('element__like_active');
-        this.isLiked = true;
-    }
-    unlikeCards() {
-        this._cardLikeButton.classList.remove('element__like_active');
-        this.isLiked = false;
     }
 
     isLiked() {
@@ -86,6 +86,7 @@ export default class Card {
             this._handelCardClick(this._title, this._link);
         });
     }
+
     getCardId() {
         return this._cardId;
     }
