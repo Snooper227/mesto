@@ -11,7 +11,7 @@
 .element__basket{background-color:initial;background-image:url(823b0cf1b0b7e9cb7cad.svg);border:none;color:#fff;cursor:pointer;height:19px;margin:0;padding:0;position:absolute;right:20px;top:20px;width:18px}.element__basket:hover{opacity:.6}
 .element__basket_hidden{display:none}
 .element__discription{align-items:center;display:flex;justify-content:space-between;margin:25px 15px 31px 21px;max-width:246px}
-.element__photo{background-color:#000;color:#fff;display:block;height:282px;width:100%}
+.element__photo{background-color:#000;color:#fff;display:block;height:282px;-o-object-fit:cover;object-fit:cover;width:100%}
 .element__like-box{align-items:center;display:flex;flex-direction:column}
 .element__like{background-color:#fff;background-image:url(87ed371465c7a6a1cd01.svg);border:none;height:19px;padding:0;width:22px}.element__like:hover{cursor:pointer;opacity:.5}
 .element__like-counter{color:#000;font-size:13px;font-weight:400;line-height:16px;margin:3px 0 0}
