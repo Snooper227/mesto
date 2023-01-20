@@ -109,7 +109,7 @@ const avatarPopup = new PopupWithForm(avatarSelector, (formData) => {
     api.changeAvatar({avatar: formData.link})
     .then((data) => {
         newUserInfo.setAvatar({newAvatar: data.avatar})
-        avatarPopup.closePopup();
+        avatarPopup.closePopup()
     })
     .catch((err) => console.log(err))
     .finally(() => {avatarPopup.renderLoading(false)})
