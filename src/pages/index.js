@@ -54,7 +54,7 @@ const cardFormValidator = new FormValidator(selectors, cardSelector);
 
 const newUserInfo = new UserInfo({profileName, profileAbout, profileAvatar})
 
-const renderCard = (data) => {
+const createNewCard = (data) => {
     const newCard = new Card({
         data: data,
         templateSelector: templateSelector,
@@ -67,16 +67,12 @@ const renderCard = (data) => {
                 api.deleteLike(newCard.getCardId())
                     .then((data) => {
                         newCard.updateLikes(data);
-                        newCard.updateLikesView();
-                        newCard.updateLikesCounter(data.likes);
                     })
                     .catch((err) => console.log(err))
             } else {
                 api.addLike(newCard.getCardId())
                     .then((data) => {
                         newCard.updateLikes(data);
-                        newCard.updateLikesView();
-                        newCard.updateLikesCounter(data.likes);
                     })
                     .catch((err) => console.log(err))
             }
@@ -102,7 +98,7 @@ const cardList = new Section(
     containerSelector, 
     {
     renderer: (card) => {
-        cardList.addItem(renderCard(card))
+        cardList.addItem(createNewCard(card))
     }
     
 })
@@ -137,7 +133,7 @@ const addNewCardPopup = new PopupWithForm (cardSelector, (formData) => {
     addNewCardPopup.renderLoading(true);
         api.addCard(formData)
             .then((data) => {
-                cardList.addItem(renderCard(data));
+                cardList.addItem(createNewCard(data));
                 addNewCardPopup.closePopup();
             })
             .catch((err) => console.log(err))

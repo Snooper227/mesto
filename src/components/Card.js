@@ -42,10 +42,6 @@ export default class Card {
             this._cardDelButton.classList.add('element__basket_hidden')
         }
 
-        if(this.isLiked()) {
-            this._cardLikeButton.classList.add('element__like_active');
-        }
-
         this.updateLikesView();
         this.updateLikesCounter(this._likes);
         this._setEventListeners();
@@ -55,13 +51,16 @@ export default class Card {
 
     deleteCard() {
         this._element.remove();
+        this._element = null;
     }
 
-    updateLikesCounter(data) {
-        this._likesOutput.textContent = data.length;
+    updateLikesCounter() {
+        this._likesOutput.textContent = this._likes.length;
     }
     updateLikes(data) {
-        this._likes = data.likes
+        this._likes = data.likes;
+        this.updateLikesCounter(data.likes);
+        this.updateLikesView();
     }
     updateLikesView() {
         if(this.isLiked()) {
